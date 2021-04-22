@@ -87,52 +87,6 @@ namespace SupaWPCon
             };
         }
 
-        public async Task<bool> CreatePost(string title, string content, string username, string password)
-        {
-            try
-            {
-                Console.WriteLine("Trying to post");
-                WordPressClient client = await GetClient(username, password);
-                if (await client.IsValidJWToken())
-                {
-                    var post = new Post
-                    {
-                        Title = new Title(title),
-                        Content = new Content(content)
-                    };
-                    await client.Posts.Create(post);
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("could not post");
-                Console.WriteLine("Error:" + e.Message);
-            }
-            Console.WriteLine("Post complete");
-            return true;
-        }
-
-        public async Task<bool> CreateUser(string newusername, string newuserpw)
-        {
-            try
-            {
-                Console.WriteLine("Trying to post");
-                WordPressClient client = await GetClient(currentUser.UserName, currentUser.Password);
-                if (await client.IsValidJWToken())
-                {
-                    
-                    //await client.Posts.Create(post);
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("could not post");
-                Console.WriteLine("Error:" + e.Message);
-            }
-            Console.WriteLine("Post complete");
-            return true;
-        }
-
         private async Task<WordPressClient> GetClient(string name, string pass)
         {
             // JWT authentication
