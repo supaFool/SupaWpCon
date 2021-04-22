@@ -22,3 +22,7 @@ To add the secret key edit your wp-config.php file and add a new constant called
 `define('JWT_AUTH_SECRET_KEY', 'your-top-secrect-key');`<br>
 
 You can generate and use a string from here https://api.wordpress.org/secret-key/1.1/salt/
+
+#### For more help visit my website. 
+[.suDev.](https://supadev.com).
+Links to homepage, will change link once I get the page built.
