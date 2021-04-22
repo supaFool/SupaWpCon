@@ -18,6 +18,7 @@ namespace SupaWPCon
             WPManager.name = name;
             WPManager.pw = pass;
             m_fullRelUrl = url + m_restAPITag;
+
         }
 
         public async Task<bool> CreatePost(string title, string content)
