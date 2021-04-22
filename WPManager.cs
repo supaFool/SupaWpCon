@@ -20,10 +20,6 @@ namespace SupaWPCon
             m_fullRelUrl = url + m_restAPITag;
         }
 
-        public void WP_CreatePost(string title, string content)
-        {
-        }
-
         public async Task<bool> CreatePost(string title, string content)
         {
             try
@@ -38,6 +34,27 @@ namespace SupaWPCon
                         Content = new Content(content)
                     };
                     await client.Posts.Create(post);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("could not post");
+                Console.WriteLine("Error:" + e.Message);
+            }
+            Console.WriteLine("Post complete");
+            return true;
+        }
+
+        public async Task<bool> CreateUser(string newusername, string newuserpw)
+        {
+            try
+            {
+                Console.WriteLine("Trying to post");
+                WordPressClient client = await GetClient(name, pw);
+                if (await client.IsValidJWToken())
+                {
+                    
+                    //await client.Posts.Create(post);
                 }
             }
             catch (Exception e)
