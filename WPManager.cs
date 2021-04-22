@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using WordPressPCL;
 using WordPressPCL.Models;
@@ -10,45 +8,54 @@ namespace SupaWPCon
     public class WPManager
     {
         private string url;
+        private static string name, pw;
         private string m_restAPITag = "/wp-json";
         private static string m_fullRelUrl;
 
-        public WPManager(string url)
+        public WPManager(string url, string name, string pass)
         {
             this.url = url;
+            WPManager.name = name;
+            WPManager.pw = pass;
             m_fullRelUrl = url + m_restAPITag;
-            CreatePost().Wait();
-            Console.In.ReadLine();
         }
 
-        private static async Task CreatePost()
+        public void WP_CreatePost(string title, string content)
+        {
+        }
+
+        public async Task<bool> CreatePost(string title, string content)
         {
             try
             {
-                WordPressClient client = await GetClient();
+                Console.WriteLine("Trying to post");
+                WordPressClient client = await GetClient(name, pw);
                 if (await client.IsValidJWToken())
                 {
                     var post = new Post
                     {
-                        Title = new Title("Post from Pillager app"),
-                        Content = new Content("My Content for post")
-                        
+                        Title = new Title(title),
+                        Content = new Content(content)
                     };
                     await client.Posts.Create(post);
                 }
             }
             catch (Exception e)
             {
+                Console.WriteLine("could not post");
                 Console.WriteLine("Error:" + e.Message);
             }
+            Console.WriteLine("Post complete");
+            return true;
         }
 
-        private static async Task<WordPressClient> GetClient()
+        private static async Task<WordPressClient> GetClient(string name, string pass)
         {
             // JWT authentication
             var client = new WordPressClient(m_fullRelUrl);
             client.AuthMethod = AuthMethod.JWT;
-            await client.RequestJWToken("webmaster", "pass");
+            await client.RequestJWToken(name, pass);
+            Console.WriteLine("Connected");
             return client;
         }
     }
