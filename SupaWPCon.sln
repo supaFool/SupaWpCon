@@ -5,9 +5,7 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupaWPCon", "SupaWPCon.csproj", "{31CD1273-0675-421D-A7D9-F473AF00D4AF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A4C925F1-C915-4178-8B09-5FF0806ECD66}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPTests", "..\SupaDb\supa_db\WPTests\WPTests.csproj", "{92F84230-73B2-46E2-995E-81F2F904EDE1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupaWpConTest", "..\SupaWpConTest\SupaWpConTest.csproj", "{42235F0E-ADDC-4731-813B-AC520E505590}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,16 +17,13 @@ Global
 		{31CD1273-0675-421D-A7D9-F473AF00D4AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31CD1273-0675-421D-A7D9-F473AF00D4AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31CD1273-0675-421D-A7D9-F473AF00D4AF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{92F84230-73B2-46E2-995E-81F2F904EDE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{92F84230-73B2-46E2-995E-81F2F904EDE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{92F84230-73B2-46E2-995E-81F2F904EDE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{92F84230-73B2-46E2-995E-81F2F904EDE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42235F0E-ADDC-4731-813B-AC520E505590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42235F0E-ADDC-4731-813B-AC520E505590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42235F0E-ADDC-4731-813B-AC520E505590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42235F0E-ADDC-4731-813B-AC520E505590}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{92F84230-73B2-46E2-995E-81F2F904EDE1} = {A4C925F1-C915-4178-8B09-5FF0806ECD66}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FCD49833-B5B9-48B9-A9F5-E7B62747F519}
